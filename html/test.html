@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{margin:0;padding:0}
+			#box{width:100px;position:relative;height:200px;overflow: hidden;}
+			#box div{width:100px;height:100px;background:#128CFF;border:1px solid #ccc;position: absolute;left:0;top:0;display: none;}
+			p{position: absolute;top:200px}
+			#box .show{display: block;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../css/jPages.css"/>
+		<script src="../js/jPages.js"></script>
+	</head>
+	<body>
+		<!--<div class="holder">
+      	</div>-->
+		<div id="box">
+			 
+			<div class="show">1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>10</div>
+			<div>11</div>
+			<div>12</div>
+			<div>13</div>
+			<div>14</div>
+			<div>15</div>
+			<div>16</div>
+			<div>17</div>
+			<div>18</div>
+			<div>19</div>
+			<div>20</div>
+			<div>21</div>
+	</div>
+			<p>
+				<a class="first" href="javascript:;">首页</a>
+				<a class="prev" href="javascript:;">上一页</a>
+				<a class="a1" href="javascript:;">1</a>
+				<a class="a1" href="javascript:;">2</a>
+				<a class="a1" href="javascript:;">3</a>
+				<a class="a1" href="javascript:;">4</a>
+				<a class="a1" href="javascript:;">5</a>
+				<a class="a1" href="javascript:;">6</a>
+				<a class="a1" href="javascript:;">7</a>
+				<a class="a1" href="javascript:;">8</a>
+				<a class="a1" href="javascript:;">9</a>
+				<a class="a1" href="javascript:;">10</a>
+				<a class="a1" href="javascript:;">11</a>
+				<a class="a1" href="javascript:;">12</a>
+				<a class="a1" href="javascript:;">13</a>
+				<a class="a1" href="javascript:;">14</a>
+				<a class="a1" href="javascript:;">15</a>
+				<a class="a1" href="javascript:;">16</a>
+				<a class="a1" href="javascript:;">17</a>
+				<a class="a1" href="javascript:;">18</a>
+				<a class="a1" href="javascript:;">19</a>
+				<a class="a1" href="javascript:;">20</a>
+				<a class="a1" href="javascript:;">21</a>
+				<a class="next" href="javascript:;">下一页</a>
+				<a class="last" href="javascript:;">尾页</a>
+			</p>
+		
+		
+	</body>
+</html>
+<script type="text/javascript">
+
+//$("div.holder").jPages({
+//    containerID: "box",
+//    perPage: 8
+//  });
+
+
+
+
+
+
+$('.next').click(function(){
+	for(var i = 0;i < 21;i++){
+		if($('#box div').eq(i).hasClass('show')){
+			var index = i;
+			break;
+		}
+	}
+	if(index < 20){
+		index++
+	}
+	$('#box div').eq(index).addClass('show').siblings().removeClass('show')
+})
+$('.prev').click(function(){
+	for(var i = 0;i < 21;i++){
+		if($('#box div').eq(i).hasClass('show')){
+			var index = i;
+			break;
+		}
+	}
+	if(index > 0){
+		index--
+	}
+	$('#box div').eq(index).addClass('show').siblings().removeClass('show')
+})
+$('p .a1').click(function(){
+	var num = $(this).index()
+	$('#box div').eq(num-2).addClass('show').siblings().removeClass('show')
+})
+$('p .first').click(function(){
+	$('#box div').eq(0).addClass('show').siblings().removeClass('show')
+})
+$('p .last').click(function(){
+	$('#box div').eq(20).addClass('show').siblings().removeClass('show')
+})
+
+//
+//$(".a1:nth-last-child(3)").css("color","red")
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+.nav1{height:49px;border-top:1px solid #000;line-height: 49px;}
+.nav1 i{padding:0 10px}
+.nav1 a{color:#666}
+.nav1 span,.nav1 i{color:#999}
+#main{overflow: hidden;}
+#main .m_left,#main .m_right{border-top:1px solid #000}
+#main .m_left{width:220px;}
+#main .m_left .goodlist .l1 p{width:190px;height:35px;padding:0 13px 0 15px;line-height: 35px;border:1px solid #dbdbdb;}
+#main .m_left .goodlist .l_f{border-top:0;width:190px;height:35px;padding:0 13px 0 15px;line-height: 35px;}
+#main .m_left .goodlist .l1 p .a1{float: left;color:#151515}
+#main .m_left .goodlist .l1 p .a2{float: right;display: block;width:16px;height:16px;background:#d0d0d0;color:#f7f7f7;font-weight:900;font-size:22px;line-height: 16px;text-align: center;margin-top:8px}
+#main .m_left .goodlist .l1 .child{width:212px;border-left: 1px solid #dbdbdb;border-right: 1px solid #dbdbdb;display: none;padding:0px 8px 10px 8px}
+#main .m_left .goodlist .l1 .child h4{color:#c91e00;font-size:14px;height:29px;font-weight: 500;margin-top:10px}
+#main .m_left .goodlist .l1 .child a{color:#151515;padding:5px 10px;margin-top:5px}
+#main .m_left .goodlist .l1 .child  a:hover{background:#cb351a;color:#fff}
+#main .m_left .goodlist .l1 .child span{margin-bottom: 5px;}
+
+#main .m_left .comdiv{width:220px;border:1px solid #dbdbdb;border-top:1px solid #000;}
+#main .m_left .comdiv h4{color:#151515;height:31px;font-size:12px;font-weight:500;padding-left:16px;line-height: 31px;border-bottom:1px solid #dbdbdb;}
+#main .m_left .comdiv ul{}
+#main .m_left .comdiv ul li{padding:20px 16px 10px 21px;height:70px;border-bottom: 1px dashed #dbdbdb;}
+#main .m_left .comdiv li img{width:53px;height: 55px;}
+#main .m_left .comdiv li em{float: left;}
+#main .m_left .comdiv li span b{display: block;width:130px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;float: right;height:20px}
+#main .m_left .comdiv li span i{display: block;color:#c91e00;font-weight: 900;float: right;}
+#main .m_left .comdiv li strong{padding:11px 0 0 55px;font-size: 9px;float: right;}
+#main .m_left .comdiv li a{color:#494949}
+#main .m_left .comdiv li a:hover{color:#c91e00}							
+#main .m_left .daren{margin-top:10px}
+
+#main .m_right{width:959px;/*height: 1000px*/}
+#main .m_right .lunbo{height:182px;border:1px solid #dbdbdb;border-top: 0;position: relative;}
+#main .m_right h4{height:32px;font-size:16px;border: 1px solid #DBDBDB;border-top:0;font-weight: 500;line-height: 32px;padding-left:16px}
+#main .m_right .lunbo .box{width:910px;margin:0 auto;position: relative;height:149px;overflow: hidden;}
+#main .m_right .lunbo .aa{position: absolute;width:16px;height:52px;border:1px solid #DBDBDB;background:#fff;color:#999;top:81px;line-height:40px;text-align: center;font-size:20px}
+#main .m_right .lunbo .prev{left:5px}
+#main .m_right .lunbo .next{right:5px}
+#main .m_right .lunbo dl{float: left;width:200px;height:116px;padding-top:33px;margin:0 10px}
+#main .m_right .lunbo dl dt{float: left;}
+#main .m_right .lunbo dl dd{float: right;}
+#main .m_right .lunbo dl dt img{width:85px;height:95px}
+#main .m_right .lunbo dl dd .name{display: block;width:90px;color:#777;}
+#main .m_right .lunbo dl dd em{display: block;color:#cb1c00;font-size:10px;height:20px;font-weight: 900;}
+#main .m_right .lunbo dl dd i{display: block;font-size: 9px;color:#ccc;height:18px;text-decoration: line-through;}
+#main .m_right .lunbo dl dd .btn{display: block;width:84px;height:26px;border-radius: 2px;background: #ce1c00;color:#fff;text-align: center;line-height: 26px;}
+#main .m_right .lunbo .sum{width:2730px;position: absolute;left:0;top:0;}
+#main .m_right .lunbo .sum .com{width:910px;float: left;}
+#main .m_right .choose{width:959px;border:1px solid #dbdbdb;border-top: 1px solid #000;margin-top:15px}
+#main .m_right .choose h4 a{font-size:12px;color:#cc1d02}
+
+#main .m_right .choose .comdiv{width:930px;margin:0 auto;border-bottom:1px solid #ccc;padding-top:18px;overflow: hidden;}
+#main .m_right .choose h5{width:54px;font-size:12px;padding-left:16px}
+#main .m_right .choose p{width:860px}
+#main .m_right .choose p a{display: block;width:120px;height:24px;float: left;color:#444;padding-left:8px;margin-right:18px;line-height:22px}
+#main .m_right .choose .guo a{width:72px;height:22px;}
+#main .m_right .choose p a:hover{background:#cc1d00;color:#fff}
+#main .m_right .choose .all{background:#cc1d00;color:#fff}
+#main .m_right .choose .pin{position: relative;overflow: visible;margin-bottom: 15px;}
+#main .m_right .choose .pin span{display: block;width:96px;height:20px;border:1px solid #ccc;border-top:0;position: absolute;bottom:-20px;color:#777;line-height:20px;background:#fff url(../img/l_1.png) no-repeat 85px 5px;left:435px;cursor: pointer;padding-left: 30px;}
+#main .m_right .choose .pin b{display: none;}
+#main .shaixuan{width:928px;height:34px;border:1px solid #dfdfdf;margin-top:15px;line-height: 34px;padding:6px 20px 0 10px;color:#434343}
+#main .m_right .shaixuan .all{background:#cc1d00;color:#fff}
+#main .shaixuan .left a{display: block;width:52px;height:26px;border:1px solid #d2d2d2;float: left;color:#434343;text-align: center;line-height:26px;margin-right:9px}
+#main .shaixuan .left .timea{width:76px}
+#main .shaixuan .left input{width:40px;height:20px;border:1px solid #ccc}
+#main .shaixuan .left a:hover{background:#cc1d00;color:#fff;border:1px solid #cc1d00}
+#main .shaixuan .left .btn{width:43px;height:22px;border:1px solid #9f0100;background:#cc1d00;color:#fff}
+#main .shaixuan .right i{color:#ff0000}
+#main #content div{width:959px;border:1px solid #ccc;overflow: hidden;}
+#main #content dl{width:184px;height:250px;background:#fff;padding:0 23px;position: relative;float: left;/*margin-right:5px;margin-bottom:10px*/margin:10px 1px}
+#main #content dl img{width:160px;height:160px}
+#main #content dl .dd1{height:37px;overflow: hidden;}
+#main #content dl .dd1 a{color:#444}
+#main #content dl .dd2{height:23px;}
+#main #content dl .dd2 i{color:#c91f00;font-weight: 900;padding-right:8px}
+#main #content dl .dd2 em{color:#999;font-weight:9px;text-decoration: line-through;}
+#main #content dl .dd3{height:25px}
+#main #content dl .dd3 b{display: block;float: left;width:90px;height: 24px;border:1px solid #b5dbf1;color:#4693c1;text-align: center;line-height:24px}
+
+
+#main #content dl .dd4{width:184px;height:30px;position: absolute;bottom:0;background:#fff;display: none;border-bottom:2px solid #cc1d00;border:1px solid #fff}
+
+
+#main #content dl .dd4 .join{display: block;width:80px;height:30px;background:#cc1d00 url(../img/join.png) no-repeat 20px 10px;padding-left:39px;line-height: 30px;color:#fff;float: left;}
+#main #content dl .dd4 .collect{width:27px;height:30px;color:#999;background:url(../img/collect.png) no-repeat 0 center;display: block;padding-left:15px;float: right;line-height: 30px;}
+		<dl>
+					<dt><a href="#"><img src="../img/i_cai1.jpg" alt="name" title="name"/></a></dt>
+								<dd class="dd1"><a href="#">商品名字商品名字商品名字商品名字</a></dd>
+								<dd class="dd2"><i>¥130.00</i><em>¥99.00</em></dd>
+								<dd class="dd3"><b>销量111</b><span>评价222</span></dd>
+								<dd class="dd4"><a class="join" href="#">加入购物车</a><a class="collect" href="#">收藏</a></dd>
+							</dl>

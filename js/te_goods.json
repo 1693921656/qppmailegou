@@ -1,0 +1,16 @@
+{
+	"id":"0","code":"200","data":[
+		{"id":"0","img":"../img/i_te1.jpg","name":"电动牙刷专场","selldate":"2016-9-24 12:00:00","zhekou":"5.0"},
+		{"id":"1","img":"../img/i_te2.jpg","name":"日本小林品牌专场","selldate":"2016-9-4 10:00:00","zhekou":"5.1"},
+		{"id":"2","img":"../img/i_te3.jpg","name":"潮童秋装专场","selldate":"2016-9-8 18:00:00","zhekou":"1.9"},
+		{"id":"3","img":"../img/i_te4.jpg","name":"美国费雪玩具专场","selldate":"2016-9-9 12:00:00","zhekou":"5.2"},
+		{"id":"4","img":"../img/i_te5.jpg","name":"日本花王纸尿裤专场","selldate":"2016-9-7 12:00:00","zhekou":"6.1"},
+		{"id":"5","img":"../img/i_te6.jpg","name":"兰蔻面部护理特卖","selldate":"2016-9-13 12:00:00","zhekou":"4.2"},
+		{"id":"6","img":"../img/i_te7.jpg","name":"宝宝超爱的零食专场","selldate":"2016-9-15 12:00:00","zhekou":"1.8"},
+		{"id":"7","img":"../img/i_te8.jpg","name":"女性营养健康专场","selldate":"2016-9-9 12:00:00","zhekou":"3.8"},
+		{"id":"8","img":"../img/i_te9.jpg","name":"玛尔斯Marvis品牌专场","selldate":"2016-9-8 12:00:00","zhekou":"5.0"},
+		{"id":"9","img":"../img/i_te10.jpg","name":"荷兰牛栏奶粉专场","selldate":"2016-9-12 12:00:00","zhekou":"3.7"},
+		{"id":"10","img":"../img/i_te11.jpg","name":"美国安利保健品专场","selldate":"2016-8-30 12:00:00","zhekou":"1.4"},
+		{"id":"11","img":"../img/i_te12.jpg","name":"爱慕玛蒂诺童鞋特卖","selldate":"2016-9-23 12:00:00","zhekou":"3.0"}
+	]
+}

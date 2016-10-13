@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录-麦乐购-全球精品母婴商城</title>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<script src="../js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/check.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="userHeader">
+			<div class="left"><img src="../img/logo.gif" /></div>
+			<div class="right"><img src="../img/registerAuthenticPic.png" /></div>
+		</div>
+		<div id="userMain">
+			<div class="right login">
+				<h3>登录<span><a href="register.html">免费快速注册</a></span></h3>
+				<div class="warn_parent">
+					<input class="warn_prev phone" type="text" placeholder="手机号码/邮箱/用户名" /><br />
+					<p class="warn warn_phone">请输入账号</p>
+				</div>
+				<div class="warn_parent">
+					<input class="warn_prev pass" type="text" placeholder="请输入密码" /><br />
+					<p class="warn warn_pass">密码</p>
+				</div>
+				<div class="warn_parent">
+					<p class="yanP"><input class="yan message warn_prev yanzheng" type="text" placeholder="请输入验证码" /><b><i class="placeyanzhengma"></i><a class="change" href="javascript:;">换一张</a></b></p>
+					<p class="warn warn_yanzheng">请输入验证码</p>
+				</div>
+				<p class="forget"><a href="#">忘记密码？</a></p>
+				<input class="btn" type="button" name="" id="" value="登录" /><br />
+				<p class="lastP">使用其他账号登录:<a href="#"><img src="../img/login.png"/></a></p>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script type="text/javascript">
+$('#footer').load('comfoot1.html')
+	$('.btn').click(function(){
+		
+		$('.warn').css('display','none')
+		var name = $('.phone').val();		
+		var pass = $('.pass').val();
+		if(name == getCookie('user') && pass == getCookie('pass') && flag4){
+			alert('登录成功')
+			setCookie('success',true);
+			window.location.href = 'index.html'
+		}else{			
+			setCookie('success',false)
+			//alert(1)
+			if(name == ''){
+				$('.warn_phone').html("请输入账号").css('display','block')
+			}else if(pass == ''){
+				$('.warn_pass').html("请输入密码").css('display','block')
+			}else if(name != getCookie('user')){
+				$('.warn_phone').html('用户不存在').css('display','block')
+			}else if(pass != getCookie('pass')){
+				$('.warn_yanzheng').html('您输入的用户名或密码错误，请核对后重新输入！').css('display','block')
+			}else if(!flag4){
+				yanzheng()
+			}
+			
+	
+			
+			
+		}
+	})
+	
+	var flag4 = false
+	yanzheng()
+	function yanzheng(){
+		var str = yanzhengma()
+		$('.placeyanzhengma').html(str)
+		$('.change').click(function(){
+		var str = yanzhengma()
+		$('.placeyanzhengma').html(str)
+		})
+		$('.yanzheng').blur(function(){		
+			if(s == ''){
+				$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('请输入验证码')
+				flag4 = false
+			}else{
+				var s = $(this).val();
+				var ss = $('.placeyanzhengma').html()
+       	 		if (s == ss){         	 		
+					$(this).parents('.warn_parent').find('.warn').css({'display':'none'})
+					$('.placeyanzhengma').css({'background':'#ccc url(../img/dui.png) no-repeat 0 center'})
+					flag4 = true
+	        	}else{        					$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('验证码有误，请重新输入，请重新输入')
+	        					$('.placeyanzhengma').css({'background':'#ccc url(../img/cuo.png) no-repeat 0 center'})
+	        		flag4 = false
+	        	}
+			}
+		})	
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

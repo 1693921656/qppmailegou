@@ -1,0 +1,10 @@
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button{margin:0;padding:0}
+li{list-style:none}
+a{text-decoration:none}
+i,em,b,strong{font-weight:500;font-style:normal;}
+img{display:block;border:none}
+.left{float:left}
+.right{float:right}
+.w{width:1200px;margin:0 auto}
+body{font-size:12px;background:#f3f3f3;overflow-x:hidden;}
+.clearfloat{clear:both;height:0;overflow: hidden;}

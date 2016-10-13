@@ -1,0 +1,192 @@
+/*------------------banner-----------------------*/
+#banner{height:480px;}
+#banner .banner_listp{height:0;position: relative;}
+#banner .banner_list{height:478px;width:193px;position: absolute;right:0px;top:-480px}
+#banner .banner_list a{padding-bottom: 1px;display: block;}
+#banner .ban .big img{height:500px;width:830px}
+#banner .ban .big{position: relative;width:100%;height:480px}
+#banner .ban .big li{position: absolute;display: none;width:810px;left:234px;overflow: hidden;height: 480px;}
+#banner .small{width:785px;margin: 0 auto;position: relative;}
+#banner .small li{position: absolute;bottom:12px}
+#banner .small .l1{left:0px}  
+#banner .small .l2{left:158px}
+#banner .small .l3{left:316px}
+#banner .small .l4{left:473px}
+#banner .small .l5{left:632px}
+/*-----------------首页h4的公共样式----------------*/
+.comh4{height:41px;padding-top:28px;padding-left:42px;font-size:18px;font-weight: 900;}
+.comh4 i{color:#999;padding-left:10px;font-size:12px;font-weight: 500;}
+/*分页按钮的公共样式*/
+.comp_btn{font-size:12px;font-weight: 500;}
+.comp_btn a{color:#666;padding:2px;border:1px solid #ddd}
+ .comp_btn span{padding:0 10px}
+.comp_btn b{color:red}
+.panic .in img{float: left;}
+/*---------------------panic抢购-----------------------*/
+.panic{height:708px;}
+.panic .panic_top{height:41px;padding-top:20px}/*可以用于多个元素样式*/
+.panic .panic_top h4{background:url(../img/panicbg.png) no-repeat;padding-left:43px}
+.panic .panic_top h4 img{display: inline-block;}
+.panic .panic_top h4 i{font-size:18px;font-weight:900;padding-right:10px}
+.panic .panic_top h4 b{color:#999;padding-right:42px}
+.panic .panic_top h4 span{color:#999}
+.panic .panic_top a{color:#666666;padding-top:21px}
+.panic .panic_bot ul{height:42px;background:#444851}
+.panic .panic_bot ul li{float:left;width:132px;height:42px;position: relative;}
+.panic .panic_bot ul li p{width:13px;height:7px;background:url(../img/panic.png);position: absolute;top:42px;left:59px;display: none;z-index:1}
+.panic .panic_bot ul .l1{background:#cb351a}
+.panic .panic_bot ul .l1 p{display: block;}
+.panic .panic_bot ul li a{text-align: center;margin:0 auto;color:#e2e2e2;}
+.panic .panic_bot ul li b,.panic .panic_bot ul li i{display: block;}
+.panic .panic_bot ul li:hover{background:#6c6c6c}
+.panic .panic_bot .colorhui{background: #444851;}
+.panic .panic_bot .colorred{background: #cb351a;}
+.panic .panic_bot ul .colorred:hover{background: #cb351a;}
+.panic .panic_bot{overflow: hidden;position: relative;height:447px}
+.panic .panic_bot .box{height:345px;padding-top:60px;width:3600px;position: absolute;left:0;top:42px;display: none;}
+.panic .panic_bot .box1{display: block;}
+.panic .panic_bot dl{width:259px;float: left;margin:0 20px}
+.panic .panic_bot dt{text-align: center;}
+.panic .panic_bot dl img{display: inline-block;}
+.panic .panic_bot dl .dd1 a{color:#666}
+.panic .panic_bot dl .dd2{}
+.panic .panic_bot dl b{font-weight: 900;padding-right:15px;border-right:1px solid #a1a1a1;display: block;float: left;}
+.panic .panic_bot dl span{float: left;padding:0 41px 0 10px}
+.panic .panic_bot dl span i{color:#e02200;font-weight: 900;display: block;}
+.panic .panic_bot dl span em{color:#a1a1a1;display: block;text-decoration: line-through;}
+.panic .panic_bot dl .dd2 a{background: #f95d5e;color:#fff;display: block;width:90px;height:30px;border-radius: 3px;float:right;text-align: center;line-height: 30px;}
+.panic .span1,.like .span1{display: block;width:27px;height:82px;background:#e0e0e0;position: absolute;top:170px;line-height:82px;text-align: center;font-size:24px;color:#fff;cursor: pointer;}
+.panic .prev,.like .prev{left:0}
+.panic .next,.like .next{right:0}
+.panic .panic_bot .btn{position: absolute;top:56px;right:0}\
+/*----------------------half今日半价---------------------*/
+.half{/*height:451px;*/overflow: hidden;}
+.half h4{background:url(../img/halfbg.png) no-repeat 4px 26px}
+.half .half_con{height:381px;border-top:1px solid #999;border-bottom:1px solid #999}
+.half .half_con dl{float: left;width:395px;height:190px;/*border:1px solid #ccc;*/}
+.half .half_con dl dt,.half .half_con dl dd{float: left;}
+.half .half_con dl dt img{width:175px;height:190px}
+.half .half_con dl dd{padding-top:37px}
+.half .half_con dl dd a{color:#999}
+.half .half_con dl dd .i1{display: block;height:77px;width:173px }
+.half .half_con dd .p1 span{font-size: 18px;color:#e02200;font-weight: 900;}
+.half .half_con dd .p1 b{font-size: 9px;color:#A1A1A1;text-decoration: line-through;padding-left:6px}
+.half .half_con dd .p1{height:36px}
+.half .half_con dd .p2 em{font-size: 11px;color:#A1A1A1;padding-right:40px}
+.half .half_con dd .p2 i{display: block;width:68px;height:22px;background:#fa5f5d url(../img/half1.png) no-repeat 56px 6px;border-radius: 2px;float: right;line-height: 22px;text-align: center;color:#fff}
+/*--------------------te今日特价---------------------*/
+.te{overflow: hidden;}
+.te h4{color:#c53616;background: url(../img/tebg.png) no-repeat 6px 26px;}
+.te h4 i{color:#999}
+.te h4 a{font-size:12px;color:#999}
+.te .te_con dl{width:290px;height:290px;float: left;margin-right:10px}
+.te .te_con dl dt a{overflow: hidden;display: block;width:290px;height:230px;position: relative;}
+.te .te_con dl img{width:290px;height:230px;position: absolute;}
+.te .te_con dl .dd1{float: left;}
+.te .te_con .p1{color:#444444;height:34px;line-height: 34px; }
+.te .te_con .p2{background:url(../img/te1.png) no-repeat ;padding-left:20px;color:#999}
+.te .te_con .dd2{float: right;font-size:18px;color:#e02200;font-weight: 900;padding-top:22px}
+.te .te_con .dd2 i{font-size:12px;font-weight: 500;}
+/*--------------------like猜你喜欢---------------------*/
+.like{position: relative;height:600px;overflow: hidden;}
+.like h4{background: url(../img/likebg.png) no-repeat 4px 26px;}
+.like h4 .s1{color:#7b7b7b;font-size:12px;font-weight: 500;background: url(../img/like1.png) no-repeat 0 center;padding:4px 18px 3px 23px;}
+.like h4 .s1 .a1{color:#fff;padding:1px 18px 0 5px;background:#ff9f9f url(../img/like2.png) no-repeat 109px center;margin-right:5px}
+.like h4 p{float: right;}
+.like .like_con{position: absolute;overflow: hidden;width:12000px;left:0;top:69px}
+.like .like_con dl a{color:#666}
+.like .like_con dl img{width:180px;height:180px}
+.like .like_con dl{width:180px;height:250px;text-align: center;float: left;margin:0 30px;}
+.like .like_con dl b{color:red;font-size:14px;font-weight: 900;}
+.like .like_con dl i{color:#a1a1a1;text-decoration: line-through;}
+/*-----------recent最近浏览的商品---------------*/
+/*.recent{height:100px;background:#ECA598;margin-top:10px;}
+.recent span{color: #666;line-height: 100px;padding-left: 37px;}*/
+/*----------------楼梯---------------------*/
+.louti{height:493px;background:#f3f3f3;margin:25px auto}
+.louti_list{position: fixed;left:0;top:30%;height:333px;width:32px;display: none;background:#fff}
+.louti_list li{}
+.louti_list li a{width:32px;height:32px;text-align: center;padding-top:4px;display: block;color:#e8a79c}
+.louti_list li a img{display: inline-block;}
+.louti .left{width:180px;height:489px;padding-top:4px;position: relative;overflow: hidden;}
+.louti h2{height:42px;font-size: 14px;color:#fff;padding-left: 69px;line-height:42px}
+.louti .left span{font-size: 14px;color:#fff;font-weight: 900;padding:18px 4px 6px 6px;background:#5cc3ff;position: absolute;top:0;left:28px}
+.louti .left p{height:225px;width:158px;margin:0 auto;padding-left:20px}
+.louti .left .lunbo{height:218px;}
+.louti .left p a{color:#666;display: block;float: left;/*width:75px;*/height:30px;padding-right:20px}
+.louti ul{width:360px;position: absolute;bottom:0;left:0px;}
+.louti .left li{float: left;width:180px;height:218px;background:#fff;}
+.louti .left li img{margin:20px auto}
+.louti .left .lunbo .a1{position: absolute;top:75%;color:#ccc;font-size:40px;width:40px;height:50px;display: block;text-align: center;line-height: 50px;}
+.louti .left .lunbo .prev{left:0}
+.louti .left .lunbo .next{right: 0;}
+.louti .right a{float: left}
+.louti .right .center{margin:0 12px}
+.louti .right img{margin-bottom: 13px;}
+/*----------------daren---------------------*/
+.daren{/*height:800px;*/margin-top:39px;overflow:hidden;}
+.daren .left{width:960px}
+.daren h4{font-size:18px;font-weight:500;height:27px}
+.daren h4 span{color:#999;font-size:12px;padding-left:10px}
+.daren .left dl{width:470px;float:left;margin:10px;margin-left:0;padding-bottom: 10px;}
+.daren a{color:#666666}
+.daren a:hover{color:red}
+.daren .left .dd1{color:#444;font-size:13px;height:23px;margin-top:16px}
+.daren .right{width:240px;}
+.daren .right h4{font-weight:900;}
+.daren .right h4 span{font-weight:500;}
+.daren .right h4 b{float: right;}
+.daren .right h4 b a{color:#666;font-size:12px;padding:2px;margin-right:5px;border:1px solid #666;background:#fff}
+.daren .right .lun{overflow:hidden;width:230px;position: relative;height:637px;margin-top:10px;}
+.daren .right .lun div{width:920px;position: absolute;left:0}
+.daren .right .lun1{top:0px;}
+.daren .right .lun2{top:327px;}
+.daren .right dl{float:left;width:230px;height:313px}
+.daren .right dt{height:230px;position: relative;}
+.daren .right dt b{color:#fff;position:absolute;bottom:0;left:0;z-index: 1;line-height: 28px;}
+.daren .right dt i{display: block;width:230px;height:28px;position: absolute;bottom:0;background:#000;opacity: .7;filter:alpha(opacity=70)}
+.daren .right img{margin:0 auto;height:230px}
+.daren .right .dd1{margin-top:8px;height:30px;line-height:24px;color:#000}
+.daren .right .dd1 b{display: block;float: left;width:24px;height:24px;border-radius: 50%;background:#ec1e06;color:#fff;margin-right:5px;text-align: center;}
+/*----------------navigation-------------*/
+.navigation{height:185px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding-top:40px}
+.navigation p{width:200px;float: left;height:127px;padding-top:58px}
+.navigation p .a2{display: block;padding-right:10px;float: left;height:20px;color:#666}
+.navigation p .a2:hover{color:red}
+.navigation p span{display: block;height:100px;overflow: hidden;width:150px;margin:0 auto}
+
+.navigation .a1{width:78px;height:22px;border-radius: 2px;background:#ffa1a1;color:#fff;display: block;line-height:22px;padding-left:12px;margin:0 auto}
+.navigation .a1 b{display: block;float: right;width:16px;height:22px;background:#ff7d7d url(../img/like2.png) no-repeat center}
+/*----------------bg---------------------*/
+.bg{background:url(../img/i_divbg.png);height:400px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

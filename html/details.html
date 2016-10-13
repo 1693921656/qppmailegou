@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>麦乐购商品详情</title>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/details.css"/>
+		<script src="../js/com.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/check.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/details.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#header").load('common.html', function() {
+					$('#header .head_bot .left img').attr('src','../img/logo.gif')
+					$('#header .head_bot .right img').attr('src','../img/changehead.jpg')
+					headFn();//头部特效
+				}) //加载header
+				$("#nav").load('comlist.html',function(){//加载list
+					navleftlistswitch()
+					list()//滑入滑出效果
+					listAjax()//请求json数据
+					navFn()//导航的效果
+				})
+				$('#footer').load('comfoot1.html')//加载footer1
+				$('#footer1').load('comfoot2.html')//加载footer2			
+				$('#footer2').load('comfoot3.html')
+				$('#r_list').load('comr_list.html',function(){
+					rListhover()//侧边栏划过效果
+					rlist()//侧边栏展开关闭和切换
+					btnFn()//侧边栏登录的验证
+					yanzheng()
+				})
+				goodajax()//加载商品详情
+				dogood()//对商品的操作
+				fdj()//放大镜
+			})
+		</script>
+	</head>
+	<body>
+	<div id="r_list"></div>
+		<div id="header"></div>
+		<div id="nav" class="w"></div>
+		<div id="main" class="w"></div>
+		<div id="main2" class="w">
+			<div class="fixednav">
+				
+					<p class="call left"><a class="a1" href="#">400-666-6600</a><a class="a2" href="#">在线客服</a></p>
+					<div class="goodnav left">
+					<ul class="left">
+							<li class="l1 com"><a href="#xiangqing">商品详情</a></li>
+							<li class="l2"><a href="#pinglun">商品评价(<i>5</i>)</a></li>
+							<li class="l3"><a href="#">在线客服</a></li>
+							<li><a href="#">加入收藏</a></li>
+						</ul>
+						<p class="right"><span>¥<em>509.00</em></span><a href="cart.html">加入购物车</a></p>
+				</div>
+			</div>
+			<div class="left m_left">
+				<div class="new">
+					<h5>新品抢先看</h5>
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="new">
+					<h5>浏览过此商品的用户还浏览了</h5>
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="new">
+					<h5>最近浏览过的商品</h5>
+					<ul>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="right m_right">
+				<div class="bao">
+					<h5>爆款推荐专区</h5>
+					<div class="baocon">
+						<div class="left">
+							<a href="#"><img src="../img/bao1.jpg"/></a>
+						</div>
+						<div class="left">
+							<div><a href="#"><img src="../img/bao2.jpg"/></a><a href="#"><img src="../img/bao3.jpg"/></a></div>
+							<div>
+							<a href="#"><img src="../img/bao4.jpg"/></a><a href="#"><img src="../img/bao5.jpg"/></a></div>
+						</div>
+						<div class="left">
+						<a href="#"><img src="../img/bao6.jpg"/></a></div>
+					</div>
+				</div>
+				<div class="goodnav">
+					<ul class="left">
+						<li class="l1 com"><a href="#">商品详情</a></li>
+						<li class="l2"><a href="#pinglun">商品评价(<i>5</i>)</a></li>
+						<li class="l3"><a href="#">在线客服</a></li>
+						<li><a href="#">加入收藏</a></li>
+					</ul>
+					<p class="right"><span>¥<em>509.00</em></span><a href="cart.html">加入购物车</a></p>
+				</div>
+				<div id="xiangqing">
+					<img src="../img/det1.jpg"/>
+					<img src="../img/det2.jpg"/>
+					<img width="400" src="../img/det3.jpg"/>
+					<img src="../img/det4.jpg"/>
+					<img src="../img/det5.jpg"/>
+					<img src="../img/det6.jpg"/>
+					<img src="../img/det7.jpg"/>
+					<img src="../img/det8.jpg"/>
+					<img src="../img/det9.jpg"/>
+					<img src="../img/det10.jpg"/>
+					<img src="../img/det11.jpg"/>
+					<img src="../img/det12.jpg"/>
+					<img src="../img/det13.jpg"/>
+					<img src="../img/det14.jpg"/>
+					<img src="../img/det15.jpg"/>
+					<img src="../img/det16.jpg"/>
+					<img src="../img/det17.jpg"/>
+					<img src="../img/det18.jpg"/>
+					<img src="../img/det19.jpg"/>
+					<img src="../img/det20.jpg"/>
+					<img src="../img/det21.jpg"/>
+					<img src="../img/det22.jpg"/>
+				</div>
+				<div id="pinglun">
+					<p class="nav"><a class="com a1" href="javascript:;">全部评论(5)</a><a href="javascript:;">晒单的评论(0)</a><span><i></i><b>写评论</b></span></p>
+					<ul>
+						<li>
+							<a class="left" href="#"><img src="../img/i_cai1.jpg"/></a>
+							<p class="left">
+								<a href="#">自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机</a>								
+								<b>V1 普通会员 185***4744  2016-08-27 08:17 </b>
+								<i>好评</i>
+							</p>
+						</li>
+						<li>
+							<a class="left" href="#"><img src="../img/i_cai1.jpg"/></a>
+							<p class="left">
+								<a href="#">自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机</a>								
+								<b>V1 普通会员 185***4744  2016-08-27 08:17 </b>
+								<i>好评</i>
+							</p>
+						</li>
+						<li>
+							<a class="left" href="#"><img src="../img/i_cai1.jpg"/></a>
+							<p class="left">
+								<a href="#">自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机</a>								
+								<b>V1 普通会员 185***4744  2016-08-27 08:17 </b>
+								<i>好评</i>
+							</p>
+						</li>
+						<li>
+							<a class="left" href="#"><img src="../img/i_cai1.jpg"/></a>
+							<p class="left">
+								<a href="#">自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机</a>								
+								<b>V1 普通会员 185***4744  2016-08-27 08:17 </b>
+								<i>好评</i>
+							</p>
+						</li>
+						<li>
+							<a class="left" href="#"><img src="../img/i_cai1.jpg"/></a>
+							<p class="left">
+								<a href="#">自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机</a>								
+								<b>V1 普通会员 185***4744  2016-08-27 08:17 </b>
+								<i>好评</i>
+							</p>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		<div id="footer2"></div>
+		<div id="footer"></div>
+		<div id="footer1"></div>
+	</body>
+</html>
+<script type="text/javascript">
+$.ajax({
+	url:"../js/goodslist.json",
+	success:function(data){
+		var msg = data.data;
+		var str = '';
+		for(var i = 106;i < 111;i++){
+			str+=
+				'<li>'+
+					'<p class="p1"><a href="#"><img src="'+msg[i].img+'"/></a></p>'+
+					'<p class="p2"><a href="#">'+msg[i].name+'</a></p>'+
+					'<p class="p3"><i>¥'+msg[i].oldprice+'</i><em>¥'+msg[i].newprice+'</em></p>'+
+				'</li>'
+		}
+		$('#main2 .m_left .new ul').append(str)
+	}
+});
+/*------------固定定位的商品导航------------*/
+$(window).scroll(function(){
+	if($(this).scrollTop() > 1214){
+		$('#main2 .fixednav').css('display','block')
+	}else{
+		$('#main2 .fixednav').css('display','none')
+	}
+})
+/*-----------商品导航的点击--------------*/
+$('.goodnav li').click(function(){
+	$(this).addClass('com').siblings().removeClass('com')
+})
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

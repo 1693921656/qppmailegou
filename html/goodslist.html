@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>奶粉-宝宝食品-麦乐购-麦乐购进口母婴商城</title>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />		
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/goodslist.css"/>
+		<script src="../js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/com.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/check.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/goodslist.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/jPages.css"/>
+		<script src="../js/jPages.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#header").load('common.html', function() {
+					$('#header .head_bot .left img').attr('src','../img/logo.gif')
+					$('#header .head_bot .right img').attr('src','../img/changehead.jpg')
+					headFn();//头部特效
+				}) //加载header
+				$("#nav").load('comlist.html',function(){//加载list
+					navleftlistswitch()
+					list()//滑入滑出效果
+					listAjax()//请求json数据
+					navFn()//导航的效果
+				})
+				$('#footer').load('comfoot1.html')//加载footer1
+				$('#footer1').load('comfoot2.html')//加载footer2			
+				$('#footer2').load('comfoot3.html')
+				$('#r_list').load('comr_list.html',function(){
+					rListhover()//侧边栏划过效果
+					rlist()//侧边栏展开关闭和切换
+					btnFn()//侧边栏登录的验证
+					yanzheng()
+				})
+				mainlist()//左边商品列表
+				switch1()//开关
+				tuijian()//左边的ajax请求
+				fn1()//推荐的轮播
+				pinpai()//品牌的开关
+				listajax()//请求ajax的商品列表
+				shaixuan()//筛选
+			})			
+		</script>
+	</head>
+	<body>
+		<div id="r_list"></div>
+		<div id="header" class="w"></div>
+		<div id="nav" class="w"></div>
+		<p class="nav1 w">
+			<a href="index.html">首页</a><i>&gt;</i>
+			<a href="#">宝宝食品</a><i>&gt;</i>
+			<span>奶粉</span>
+		</p>
+		<div id="main" class="w">
+			<div class="left m_left">
+				<ul class="goodlist">
+					<li class="l1 l_f">全部商品分类</li>
+					<li class="l1">
+						<p><a class="a1" href="#">宝宝食品</a><a class="a2" href="#">+</a></p>
+						<div class="child"></div></li>
+					<li class="l1">
+						<p><a class="a1" href="#">宝宝用品</a><a class="a2" href="javascript:;">+</a></p>
+						<div class="child"></div>
+					</li>
+					<li class="l1">
+						<p><a class="a1" href="#">营养保健</a><a class="a2" href="javascript:;">+</a></p>
+						<div class="child"></div>
+					</li>
+					<li class="l1">
+						<p><a class="a1" href="#">宝宝玩具</a><a class="a2" href="javascript:;">+</a></p>
+						<div class="child">
+							
+						</div>
+					</li>
+					<li class="l1">
+						<p><a class="a1" href="#">宝宝服饰</a><a class="a2" href="javascript:;">+</a></p>
+						<div class="child"></div>
+					</li>
+					<li class="l1">
+						<p><a class="a1" href="#">孕产用品</a><a class="a2" href="javascript:;">+</a></p>
+						<div class="child"></div>
+					</li>
+					<li class="l1">
+						<p><a class="a1" href="#">个护化妆</a><a class="a2" href="javascript:;">+</a></p>
+						<div class="child"></div>
+					</li>
+					<li class="l1">
+						<p><a class="a1" href="#">居家生活</a><a class="a2" href="javascript:;">+</a></p>
+						<div class="child"></div>
+					</li>
+					<li class="l1">
+						<p><a class="a1" href="#">海外直邮</a><a class="a2" href="javascript:;">+</a></p>
+						<div class="child"></div>
+					</li>
+					<li class="l1">
+						<p><a class="a1" href="#">礼品卡</a><a class="a2" href="javascript:;">+</a></p>
+						<div class="child"></div>
+					</li>
+					
+				</ul>
+				<div class="tuijian comdiv">
+					<h4>此分类大部分用户浏览了</h4>
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="daren comdiv">
+					<h4>购物达人同时还购买了这些</h4>
+					<ul>
+						
+					</ul>
+				</div>
+				<div class="daren"></div>
+			</div>
+			<div class="right m_right">
+				<div class="lunbo">
+					<h4>热卖推荐</h4>
+					<div class="box">
+						<div class="sum">
+							<div class="div1 com">
+								
+							</div>
+							<div class="div2 com"></div>
+							<div class="div3 com"></div>
+						</div>
+					</div>
+					<a class="prev aa" href="javascript:;">&lt;</a>
+					<a class="next aa" href="javascript:;">&gt;</a>
+				</div>
+				<div class="choose">
+					<h4><a href="#">奶粉</a>-商品筛选</h4>
+					<div class="guo comdiv">
+						<h5 class="left">国别</h5>
+						<p class="right">
+							<a class="all" href="#">全部</a><a href="#">荷兰</a><a href="#">新西兰</a><a href="#">德国</a><a href="#">美国</a><a href="#">澳大利亚</a><a href="#">英国</a><a href="#">法国</a><a href="#">国内精品</a><a href="#">中国香港</a><a href="#">中国台湾</a><a href="#">中国进口</a><a href="#">日本</a><a href="#">韩国</a>							            
+						</p>
+					</div>
+					<div class="pin comdiv">
+						<span class="btnon">更多品牌</span>
+						<h5 class="left">品牌</h5>
+						<p class="right">
+							<a class="all" href="#">全部</a><a href="#">澳洲a2</a><a href="#">雅培Abbott</a><a href="#">英国雅培Abbott</a><a href="#">荷兰AMA</a><a href="#">安满Anmum</a><a href="#">德国爱他美Aptamil</a><a href="#">新西兰爱他美Aptamil</a><a href="#">英国爱他美Aptamil</a><a href="#">澳洲贝拉米Bel</a><a href="#">贝拉米Bellamy's</a><a href="#">新西兰可益多</a><a href="#">Carrickmorecaprilac</a><a href="#">英国牛栏Cow</a><a href="#">新西兰咔哇熊Cowala</a><a href="#">Diploma</a><a href="#">多美滋Dumex</a><a href="#">荷兰乳牛Dutchcow</a><a href="#">美国世界最好Earth's</a><a href="#">美赞臣Enfamil</a><a href="#">新西兰公式-8Formul-8</a><a href="#">美素佳儿 Friso</a><a href="#">台湾金可贝可Frisian</a><a href="#">flag gold</a><a href="#">法国达能Gallia</a><a href="#">荷兰美素Hero Baby</a><a href="#">德国喜宝Hipp</a><a href="#">德国凯莉泓乐Holle</a><a href="#">韩国日东Ildong</a><a href="#">港版惠氏启赋illuma</a>
+							<b><a href="#">荷兰佳贝艾特Kabrita</a><a href="#">新西兰Karicare</a><a href="#">台湾卡洛塔妮</a><a href="#">日本固力果Icreo</a><a href="#">美国美赞臣M</a><a href="#">美赞臣Mead</a><a href="#">日本明治Meiji</a><a href="#">美恩宝Meyen</a><a href="#">森永Morinaga</a><a href="#">日本森永Morinaga</a><a href="#">英国Nanny</a><a href="#">英国纽康特Neocate</a><a href="#">雀巢Nestle</a><a href="#">英国雀巢Nestle</a><a href="#">荷兰牛栏Nutrilon</a><a href="#">美国雅培Similac</a><a href="#">港版雅培similac</a><a href="#">英国惠氏SMA</a><a href="#">新西兰雀巢Sustagen</a><a href="#">日本和光堂Wakodo</a>	<a href="#">美国Symbiotics</a><a href="#">Tesco</a><a href="#">德国特福芬Topfer</a><a href="#">完达山</a><a href="#">新西兰惠氏Wyeth</a>	<a href="#"> 惠氏Wyeth</a><a href="#">港版惠氏Wyeth</a>	<a href="#">雅士利Yashily</a></b>
+						</p>
+						<div class="clearfloat"></div>
+					</div>
+					<div class="comdiv">
+						<h5 class="left">年龄</h5>
+						<p class="right">
+							<a class="all" href="#">全部</a><a href="#">0-6个月</a><a href="#">6-12个月</a><a href="#">12-36个月</a><a href="#">10个月以上</a><a href="#">2-7岁</a><a href="#">1-2岁</a>
+<a href="#">3-6岁</a><a href="#">6岁以上</a><a href="#">其他</a>
+						</p>
+					</div>
+					<div class="comdiv">
+						<h5 class="left">包装</h5>
+						<p class="right"><a class="all" href="#">全部</a><a href="#">罐装</a><a href="#">盒装</a><a href="#">袋装</a><a href="#">2罐优惠</a><a href="#">4罐优惠</a><a href="#">买7送1</a></p>
+					</div>
+				</div>
+				<div class="shaixuan">
+					<p class="left">
+						<a class="all" href="">综合</a>
+						<a class="xiaoliang" href="javascript:;">销量</a>
+						<a class="jiage" href="javascript:;">价格</a>
+						<a class="ping" href="javascript:;">评价</a>
+						<a href="javascript:;" class="timea">上架时间</a>
+						<span>
+							价格：
+							<input class="inp1" type="text" value="" />-
+							<input class="inp2" type="text" value="" />
+							<input type="button" class="btn" value="搜索" />
+						</span>
+					</p>
+					<span class="right">共计<i>144</i>件商品</span>
+				</div>
+				<div id="content">
+						<div>
+							
+						</div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+				</div>
+
+				<div class="holder right"></div>
+			</div>
+		</div>
+		<div id="footer2"></div>
+		<div id="footer"></div>
+		<div id="footer1"></div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+$(".holder").jPages({
+      containerID: "content",
+      perPage: 1
+    });
+
+/*-----------购物车和收藏的出现消失-----------*/
+$('#content div').on('mouseover','dl',function(){
+	$(this).find('.dd4').css('display','block')
+})
+$('#content').on('mouseout','dl',function(){
+	$(this).find('.dd4').css('display','none')
+})
+/*--------------加入购物车------------*/
+/*---------------跳转到详情页------------------*/
+$('#main #content').on('click','.in',function(){
+	var index = $(this).attr('index');
+	setCookie('dataId',index)
+	window.location.href = 'details.html'
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

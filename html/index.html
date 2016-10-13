@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>麦乐购_进口母婴商城-进口奶粉,辅食,纸尿裤,营养品,童装-100%正品100%安全-麦乐购购安全</title>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="../css/com.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/com.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/check.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#header").load('common.html', function() {
+					headFn();//头部特效
+				}) //加载header
+				$("#nav").load('comlist.html',function(){//加载list
+					list()//滑入滑出效果
+					listAjax()//请求json数据
+					navFn()//导航的效果
+				})
+				$('#footer').load('comfoot1.html')//加载footer1
+				$('#footer1').load('comfoot2.html')//加载footer2			
+				$('#footer2').load('comfoot3.html')
+				lunbo()//轮播图		
+				changeTime()//倒计时函数
+				panic_menu()//抢购导航效果
+				fenye(3,$('.panic_bot .next,.panic_bot .anext'),$('.panic_bot .prev,.panic_bot .aprev'),$('.panic_bot .con .box').eq(0),1200,$('.panic_bot .btn b'))				
+				fenye(10,$('.like .next,.like .anext'),$('.like .prev,.like .aprev'),$('.like .like_con'),1200,$('.like .btn b'))//猜你喜欢的分页效果				
+				panicGoods()//加载抢购商品
+				halfGoods()//加载半价商品
+				teAjax()//加载特价商品
+				te()//特价商品效果
+				likeAjax()//加载猜你喜欢商品
+				louti()//楼梯函数
+				bglouti()//给楼梯加样式
+				loutiAjax()//楼梯的ajax请求
+				loutiLunbo()//楼梯的轮播
+				nag()//nagivation的内容加载
+				daren()//达人
+				$('#showHead').load('comshowHead.html',function(){
+				showHeadForm()//showHead的form
+				showHead()//head的显示和隐藏			
+				})	
+				$('#r_list').load('comr_list.html',function(){
+					rListhover()//侧边栏划过效果
+					rlist()//侧边栏展开关闭和切换
+					btnFn()//侧边栏登录的验证
+					yanzheng()
+				})				
+			}) //加载页面
+		</script>
+	</head>   
+	
+	<body>
+		<div id="showHead"></div>
+		<div id="r_list"></div>	
+		<div id="header" class="w"></div>
+		<div id="nav" class="w"></div>
+		<div id="banner">
+			<div class="ban">
+				<ul class="big">
+					<li style="display: block;"><img src="../img/bn1.jpg"/></li>
+					<li><img src="../img/bn2.jpg"/></li>
+					<li><img src="../img/bn3.jpg"/></li>
+					<li><img src="../img/bn4.jpg"/></li>
+					<li><img src="../img/bn5.jpg"/></li>	
+				</ul>
+				<ul class="small">
+					<li class="l1"><a href="#"><img src="../img/b1.jpg"/></a></li>
+					<li class="l2"><a href="#"><img src="../img/b2.jpg"/></a></li>
+					<li class="l3"><a href="#"><img src="../img/b3.jpg"/></a></li>
+					<li class="l4"><a href="#"><img src="../img/b4.jpg"/></a></li>
+					<li class="l5"><a href="#"><img src="../img/b5.jpg"/></a></li>
+				</ul>
+			</div>
+			<div class="w banner_listp">
+			<div class="banner_list">		
+				<a href="#"><img src="../img/ib1.jpg"/></a>
+				<a href="#"><img src="../img/ib2.jpg"/></a>
+				<a href="#"><img src="../img/ib3.jpg"/></a>
+			</div>
+			</div>
+		</div>
+		<div class="w panic">
+			<div class="panic_top">
+				<h4 class="left">
+					<i>整点抢</i>
+					<b>超便宜，绝对值！</b>
+					<span id="daojishi">距离本场结束还剩
+						<img src="../img/time0.png"/>
+						<img src="../img/time0.png"/>
+						<img src="../img/time0.png"/>
+						<img src="../img/time0.png"/>
+						<img src="../img/time0.png"/>
+						<img src="../img/time0.png"/>
+						<img class="img1" src="../img/time0.png"/>
+					</span>
+				</h4>
+				<a href="#" class="right">更多</a>
+			</div>
+			<div class="panic_bot">
+				<ul class="menu">
+					<li class="l1 colorhui" ><a href="javascript:;"><b></b><i>抢购进行中</i></a><p></p></li>
+					<li><a href="javascript:;"><b></b><i>即将开抢</i></a><p></p></li>
+					<li><a href="javascript:;"><b></b><i>即将开抢</i></a><p></p></li>
+					<li><a href="javascript:;"><b></b><i>即将开抢</i></a><p></p></li>
+					<li><a href="javascript:;"><b></b><i>即将开抢</i></a><p></p></li>
+					<li><a href="javascript:;"><b></b><i>即将开抢</i></a><p></p></li>
+					<li><a href="javascript:;"><b></b><i>即将开抢</i></a><p></p></li>
+					<li><a href="javascript:;"><b></b><i>即将开抢</i></a><p></p></li>
+					<li><a href="javascript:;"><b></b><i>即将开抢</i></a><p></p></li>
+				</ul>
+				<div class="con">
+				<div class="box1 box"></div>
+				<div class="box2 box"></div>
+				<div class="box3 box"></div>
+				<div class="box4 box"></div>
+				<div class="box5 box"></div>
+				<div class="box6 box"></div>
+				<div class="box7 box"></div>
+				<div class="box8 box"></div>
+				<div class="box9 box"></div>
+				</div>
+				<span class="prev span1">&lt;</span>
+				<span class="next span1">&gt;</span>
+				<p class="btn comp_btn"><a class="aprev" href="javascript:;">&lt;</a><span><b>1</b>/3</span><a class="anext" href="javascript:;">&gt;</a></p>
+			</div>
+			<div class="in">
+				<img src="../img/qin1.jpg"/>
+				<img src="../img/qin2.jpg"/>
+			</div>
+		</div>
+		<div class="half w">	
+			<h4 class="comh4">今日半价<i>每天上新，天天特价，限时抢购</i></h4>
+			<div class="half_con"></div>
+		</div>
+		<div class="te w">	
+			<h4 class="comh4">天天特卖<i>每天一换，只卖半价 </i><a href="#" class="right">更多</a></h4>
+			<div class="te_con"></div>
+		</div>
+		<div class="like w">
+			<h4 class="comh4">猜你喜欢<i>千万妈妈共同的选择，推荐给更多妈妈 </i><span class="s1"><a class="a1" href="完善个人资料">填写我家宝贝档案</a>填写即送<b style="color:red;font-weight: 900;">20</b>麦豆</span><p class="btn comp_btn"><a class="aprev" href="javascript:;">&lt;</a><span><b>1</b>/10</span><a class="anext" href="javascript:;">&gt;</a></p>				
+			</h4>
+			<div class="like_con">
+				
+			</div>
+			<span class="prev span1">&lt;</span>
+			<span class="next span1">&gt;</span>
+		</div>
+		<!--<div class="w recent"><span>您最近关注这些商品</span>
+			用cookie存储，获取所有点击进入详情页时产生的cookie，通过商品id得到商品的图片，把对应图片写进来,如果最近没有关注，会提示用户赶快选购		</div>-->
+		<div class="w loutiP">
+		<div id="1f" class="w louti">
+			<div class="left">
+				<h2>宝宝奶粉</h2>
+				<span></span>
+				<p></p>
+				<div class="lunbo"></div>
+			</div>
+			<div class="right">
+				
+			</div>
+		</div>
+		<div id="2f" class="w louti">
+			<div class="left">
+				<h2>宝宝辅食</h2>
+				<span></span>
+				<p></p>
+				<div class="lunbo"></div>
+			</div>
+			<div class="right"></div>
+		</div>
+		<div id="3f" class="w louti">
+			<div class="left">
+				<h2>营养健康</h2>
+				<span></span>
+				<p></p>
+				<div class="lunbo"></div>
+			</div>
+			<div class="right"></div>
+		</div>
+		<div id="4f" class="w louti">
+			<div class="left">
+				<h2>宝宝用品</h2>
+				<span></span>
+				<p></p>
+				<div class="lunbo"></div>
+			</div>
+			<div class="right"></div>
+		</div>
+		<div id="5f" class="w louti">
+			<div class="left">
+				<h2>宝宝服饰</h2>
+				<span></span>
+				<p></p>
+				<div class="lunbo"></div>
+			</div>
+			<div class="right"></div>
+		</div>
+		<div id="6f" class="w louti">
+			<div class="left">
+				<h2>宝宝玩具</h2>
+				<span></span>
+				<p></p>
+				<div class="lunbo"></div>
+			</div>
+			<div class="right"></div>
+		</div>
+		<div id="7f" class="w louti">
+		<div class="left">
+				<h2>孕产用品</h2>
+				<span></span>
+				<p></p>
+				<div class="lunbo"></div>
+			</div>
+			<div class="right"></div></div>
+		<div id="8f" class="w louti">
+		<div class="left">
+				<h2>化妆品</h2>
+				<span></span>
+				<p></p>
+				<div class="lunbo"></div>
+			</div>
+			<div class="right"></div></div>
+		<div id="9f" class="w louti">
+		<div class="left">
+				<h2>居家生活</h2>
+				<span></span>
+				<p></p>
+				<div class="lunbo"></div>
+			</div>
+			<div class="right"></div></div>
+		</div>
+		<ul class="louti_list">
+			<li class="l1"><a href="#1f"></a></li>
+			<li><a href="#2f"><img src="../img/f2.png"/></a></li>
+			<li><a href="#3f"><img src="../img/f3.png"/></a></li>
+			<li><a href="#4f"><img src="../img/f4.png"/></a></li>
+			<li><a href="#5f"><img src="../img/f5.png"/></a></li>
+			<li><a href="#6f"><img src="../img/f6.png"/></a></li>
+			<li><a href="#7f"><img src="../img/f7.png"/></a></li>
+			<li><a href="#8f"><img src="../img/f8.png"/></a></li>
+			<li><a href="#9f"><img src="../img/f9.png"/></a></li>
+		</ul>
+		<div class="daren w">
+			<div class="left">
+				<h4>达人推荐<span>超级达人的 “购”秘籍 </span></h4>
+				<div>
+					
+				</div>
+			</div>
+			<div class="right">
+				<h4>晒单区<span>分享您购物的喜悦!</span><b class="btn"><a class="aprev" href="javascript:;">&lt;</a><a class="anext" href="javascript:;">&gt;</a></b></h4>
+				<div class="lun">
+					<div class="lun1">
+						
+					</div>
+					<div class="lun2">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="navigation w">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="bg"></div>
+		<div id="footer2"></div>
+		<div id="footer"></div>
+		<div id="footer1"></div>	
+	</body>
+</html>
+<script type="text/javascript"> 
+
+</script>   
+  
+    
+
+
+
+    
+
+
+    
+    
+    
+    
+     
+
+
+
+
+
+
+
+
+
+
+
+

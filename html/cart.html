@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的购物车-麦乐购</title>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/cart.css"/>
+		<script src="../js/com.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#header").load('common.html', function() {
+					$('#header .head_bot .left img').attr('src','../img/logo.gif')
+					$('#header .head_bot .right img').attr('src','../img/changehead.jpg')
+					$('#header .head_top,#header .head_bot').css({'width':'1002px','margin':'0 auto'})
+					//$('#header').find('.head_bot .hbot_2').empty()
+					$('#header').find('.head_bot .hbot_2').html('<img src="../img/ca.png" />').css({'marginTop':'13px'})
+					$('#header').css('borderBottom','1px solid #d10000')
+					headFn();//头部特效					
+				}) //加载header				
+				$('#footer').load('comfoot1.html')//加载footer1							
+			})
+		</script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<h2 class="w1">主人,我已经在购物车里了,快点把我带走吧!</h2>
+		<div id="main" class="w1">
+			<h4>购物车</h4>
+			<p class="all"><input checked="checked" class="allchecked" type="checkbox" value="" />全选</p>
+			<table>
+				<tr>
+					<th class="fi"><input checked="checked" type="checkbox" value="" />由麦乐购发货</th>
+					<th>单价</th>
+					<th>数量</th>
+					<th>小计</th>
+					<th>操作</th>
+				</tr>
+				<tr><td class="all" colspan="5"><p><b>包邮</b><i>满188元，全场包邮（纸尿裤除外） </i><span>已包邮</span></p></td></tr>
+				
+			</table>
+		</div>
+		<div class="main2 w1">
+			<div class="m_top">
+				<h4>您最近查看浏览的商品</h4>
+				<div class="box">
+					<div class="sum"></div>					
+				</div>
+				<a class="prev aa" href="javascript:;">&lt;</a>
+				<a class="next aa" href="javascript:;">&gt;</a>
+			</div>
+			<div class="m_bot">
+				<h4>您最近关注的商品及相关推荐</h4>
+				<div class="box">
+					<div class="sum"></div>					
+				</div>
+				<a class="prev aa" href="javascript:;">&lt;</a>
+				<a class="next aa" href="javascript:;">&gt;</a>
+			</div>
+			</div>			
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var cookies = document.cookie;
+	var arrCook = cookies.split('; ');
+	var arr = []
+	for(var i = 0;i < arrCook.length;i++){
+		var cook = arrCook[i].split('=');
+		if(!isNaN(cook[0])){
+			arr.push(cook[1]);
+		}
+	}
+	
+	
+	$.ajax({
+		url:"../js/goodslist.json",
+		success:function(data){
+			var msg = data.data;
+			var str = ''
+			var str1 = ''
+			var count = 0
+			var price = 0
+			var oldprice = 0
+			var str2 = ''//最近浏览
+			var str3 = ''
+			for(var i = 0;i < arr.length;i++){
+				for(var j = 0;j < msg.length;j++){
+					if(msg[j].id == arr[i]){
+					    num = parseInt(getCookie('dataId'+msg[j].id))//获取的商品数量
+					    count+=num
+					    price += num * msg[j].newprice
+					    oldprice += num * msg[j].oldprice
+						str +=
+				'<tr class="con">'+
+					'<td class="fi td1"><input checked="checked" class="curchecked" type="checkbox" value="" /><img src="'+msg[j].img+'"/><a class="name" href="javascript:;">'+msg[j].name+' </a></td>'+
+					'<td class="td2">¥'+msg[j].newprice+'</td>'+
+					'<td class="td3"><a class="jian" price="'+msg[j].newprice+'" href="javascript:;">-</a><input class="inp" type="text" value="'+num+'" /><a class="jia" price="'+msg[j].newprice+'" href="javascript:;">+</a></td>'+
+					'<td class="td4">¥<i>'+msg[j].newprice*num+'</i></td>'+
+					'<td><a index="'+msg[j].id+'" class="delete" price="'+msg[j].newprice+'" href="javascript:;">删除</a></td>'+
+				'</tr>'
+				str1 = 
+				'<tr><td class="last" colspan="5">'+
+					'<p class="left"><span><input type="checkbox" class="allchecked" checked="checked" value="" />全选</span><a class="clear" href="javascript:;">清空购物车</a><a href="goodslist.html">继续购物</a></p>'+
+					'<p class="right">'+
+						'<span>获得麦豆:<i>'+parseInt(price / 10)+'</i></span>'+
+						'<b>为您节省：<i>¥'+(oldprice-price)+'</i>（不含邮费）</b>'+
+						'<strong><i class="count">'+count+'</i>件商品总计:<em>¥<i>'+price+'</i></em></strong>'+
+						'<a class="jiesuan" href="querendingdan.html">去结算</a>'+
+					'</p>'+
+				'</td></tr>'
+				str2 +=
+					'<dl>'+
+						'<dt><a href="#"><img src="'+msg[j].img+'"/></a></dt>'+
+						'<dd class="dd1"><a href="#">'+msg[j].name+'</a></dd>'+
+						'<dd class="dd2">已售'+msg[j].newprice*10*j+'件</dd>'+
+						'<dd class="dd3"><span><em>¥'+msg[j].newprice+'</em><i>¥'+msg[j].oldprice+'</i></span><a href="javascript:;">加入购物车</a></dd>'+
+					'</dl>'
+					}
+					var myarr = []
+					for(var m = 0;m < 8;m++){
+						var num = Math.floor(Math.random()*36);
+						myarr.push(num)
+						str3 +=
+							'<dl>'+
+								'<dt><a href="#"><img src="'+msg[num].img+'"/></a></dt>'+
+								'<dd class="dd1"><a href="#">'+msg[num].name+'</a></dd>'+
+								'<dd class="dd2">已售'+msg[num].newprice*10*num+'件</dd>'+
+								'<dd class="dd3"><span><em>¥'+msg[num].newprice+'</em><i>¥'+msg[num].oldprice+'</i></span><a href="javascript:;">加入购物车</a></dd>'+
+							'</dl>'						
+					}
+				}
+			}
+			$('table').append(str+str1)
+			$('.main2 .m_top .box .sum').append(str2)
+			$('.main2 .m_bot .box .sum').append(str3)
+		}
+	});
+	
+	$('.main2').on('click','.next',function(){
+		//alert()
+		$(this).parent().find('.sum').css({'left':'-850px'})
+	})
+	$('.main2').on('click','.prev',function(){
+		//alert()
+		$(this).parent().find('.sum').css({'left':'0px'})
+	})
+	/*------------跳转到结算页面-------------*/
+//	$('.main2').on('click','.jiesuan',function(){
+//		window.location.href = 'querendingdan.html'
+//	})
+	
+	
+	
+	
+	
+	
+	/*------------数量减的点击事件------------------*/
+		$('table').on('click','.jian',function(){//数量减
+		var count = Number($(this).next().val())//input框的数量
+		count--;
+		var price = Number($(this).attr('price'))//单价
+		var allcount = Number($(this).parents('table').find('tr:last strong .count').html())//总数量
+		$(this).parents('table').find('tr:last strong .count').html(allcount-1)//数量减
+		var allprice = Number($(this).parents('table').find('tr:last strong em i').html())//总价
+		$(this).parents('table').find('tr:last strong em i').html(allprice - price)//总价减删除的商品的价格
+		var alldou = Number($(this).parents('table').find('tr:last .right span i').html())//总麦豆
+		$(this).parents('table').find('tr:last .right span i').html(alldou-parseInt(price / 10))//数量减
+		
+		var index = $(this).parents('tr').find('.delete').attr('index')//商品id
+		if(count <1){
+			alert("您确定不再购买该商品？")
+			$(this).parents('tr').remove();
+			removeCookie(index)
+			removeCookie('dataId'+index)
+		}else{
+			$(this).next().val(count)
+			$(this).parents('tr').find('.td4').html('¥'+(price * count))
+		}
+		
+		setCookie('dataId'+index,count)
+		
+	})			
+	/*--------------------数量加的点击-----------------*/	
+	$('table').on('click','.jia',function(){//数量加
+		var count = Number($(this).prev().val())//input中的数量
+		count++;
+		$(this).prev().val(count)	//把数量重新放回页面
+		var price = Number($(this).attr('price'))//单价
+		var allprice = Number($(this).parents('table').find('tr:last strong em i').html())//总价
+		$(this).parents('table').find('tr:last strong em i').html(allprice + price)//总价加上当前的价格
+		var allcount = Number($(this).parents('table').find('tr:last strong .count').html())//总数量
+		$(this).parents('table').find('tr:last strong .count').html(allcount+1)//总数加
+		$(this).parents('tr').find('.td4').html('¥'+(price * count))//总价
+		var alldou = Number($(this).parents('table').find('tr:last .right span i').html())//总麦豆
+		$(this).parents('table').find('tr:last .right span i').html(alldou+parseInt(price / 10))
+		var index = $(this).parents('tr').find('.delete').attr('index')
+		setCookie('dataId'+index,count)
+	})
+	/*----------------删除当前商品的操作----------------*/
+	$('table').on('click','.delete',function(){//删除
+		alert("您确定不再购买该商品？")
+		var count = parseInt($(this).parents('tr').find('.td3 input').val())//当前的数量		
+		var allcount = Number($(this).parents('table').find('tr:last strong .count').html())//总数量
+		var price = $(this).attr('price')//单价
+		var curprice = price*count;//当前商品的价格
+		//alert(curprice)
+		var allprice = Number($(this).parents('table').find('tr:last strong em i').html())//总价
+		$(this).parents('table').find('tr:last strong em i').html(allprice - curprice)//总价减去删除的商品价格
+		
+		$(this).parents('table').find('tr:last strong .count').html(allcount-count)
+		var alldou = Number($(this).parents('table').find('tr:last .right span i').html())//总麦豆
+		$(this).parents('table').find('tr:last .right span i').html(alldou-parseInt(curprice / 10))
+	var dataId = $(this).attr('index')
+	$(this).parents('tr').remove();
+	removeCookie(dataId)
+	removeCookie('dataId'+dataId)
+})
+/*---------------用户自己输入数量------------------*/
+	$('table').on('blur','.inp',function(){//用户自己输入商品数量
+		var index = $(this).parents('tr').find('.delete').attr('index')
+		var oldcount = parseInt(getCookie('dataId'+index))
+		var count = Number($(this).val())//input框的数量
+		var price = Number($(this).prev().attr('price'))//单价
+		$(this).parents('tr').find('.td4').html('¥'+(price * count))//当前商品的总价
+		var allcount = Number($(this).parents('table').find('tr:last strong .count').html())//总数量
+		$(this).parents('table').find('tr:last strong .count').html(allcount+(count-oldcount))
+		var allprice = Number($(this).parents('table').find('tr:last strong em i').html())//总价
+		
+		$(this).parents('table').find('tr:last strong em i').html(allprice + price*(count-oldcount))
+		var allprice1 = Number($(this).parents('table').find('tr:last strong em i').html())
+		$(this).parents('table').find('tr:last .right span i').html(parseInt(allprice1 / 10))
+		setCookie('dataId'+index,count)
+	})
+	/*----------------清空购物车--------------------*/
+	$('table').on('click','.clear',function(){
+		for(var i = 0;i < arr.length;i++){
+			removeCookie(arr[i])
+			removeCookie('dataId'+arr[i])
+			$(this).parents('tr').prev().remove();
+			$(this).parents('tr').find('.right span i').html(0)
+			$(this).parents('tr').find('.right b i').html(0)
+			$(this).parents('tr').find('.right strong .count').html(0)
+			$(this).parents('tr').find('.right strong em i').html(0)
+		}
+	})
+	
+	
+	
+	
+	
+	$('#main').on('click','.allchecked',function(){
+		if($(this).attr('checked') == true){
+			//alert(1)
+			$(this).parents('#main').find('.curchecked').Attr('checked',true)	
+		}else{
+			//alert(2)
+			$(this).parents('#main').find('.curchecked').Attr('checked',false)
+		}
+	})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

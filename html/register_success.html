@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册成功-麦乐购-全球精品母婴商城</title>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+		<script src="../js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	</head>
+	<body>
+		<div id="userHeader">
+			<div class="left"><img src="../img/logo.gif" /></div>
+			<div class="right"><img src="../img/registerAuthenticPic.png" /></div>
+		</div>
+		<div id="userMain1">
+			<div class="div1">
+				<p>恭喜您，您的账户<span class="user"></span>注册成功！</p>
+				<p>您所获得的20麦豆已发至您的账户，请注意查收哦！</p>
+				<p><a class="btn" href="javascript:;">立即购物</a></p>
+			</div>
+			<a href="#"><img src="../img/UxikKeap1Oq64RdFy3G7FQ.jpg"/></a>
+			<p class="p1">立即验证邮箱，保障您的账户安全！<span>可找回密码，修改账户信息，接收订单通知等。</span></p>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var user = getCookie('user');
+	var str = user.substring(0,3)
+	var str1 = user.substring(7,11)
+	var myStr = str + '****' + str1
+	$('.user').html(myStr)
+	setCookie('success',true)
+	$('.btn').click(function(){
+		window.location.href = 'index.html'
+	})
+	$('#footer').load('comfoot1.html')
+</script>

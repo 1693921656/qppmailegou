@@ -1,0 +1,125 @@
+/*------------------main----------------------*/
+#main{height:564px;border-top:1px solid #000;border-bottom:1px solid #000}
+#main .ptitle{height:49px;color:#9999ab;line-height: 49px;}
+#main .ptitle a{color:#666;}
+#main .ptitle i{padding:0 15px}
+#main .main{overflow: hidden;}
+#main .m_left{width:353px;height:515px;position: relative;}
+
+#main .m_left .small{width:350px;height:350px;border:1px solid #bababa;position: relative;}
+
+#main .m_left .small img{width:350px;height:350px;position: absolute;left:0;top:0}
+#main .m_left .small .fang{width:170px;height:170px;background:#f6e5a0;opacity: .4;filter:alpha(opacity=40);position: absolute;border:1px solid #cecdd0;left:0;top:0;display: none;}
+
+#main .m_left .big{width:400px;height:400px;position: absolute;top:0;left:352px;overflow: hidden;z-index: 1;display: none;}
+#main .m_left .big img{width:800px;height:800px;position: absolute;left: 0;top:0}
+#main .m_left .tab{width:351px;height:56px;margin-top:6px}
+#main .m_left .tab div{width:319px;margin:0 auto}
+#main .m_left .tab img{width:55px;height:54px;float: left;border:1px solid #ccc;margin-right:5px}
+#main .m_left .tab span{display: block;width:16px;height:52px;position: absolute;bottom:102px;border:1px solid #dfdfdf;color:#949494;font-size: 16px;text-align: center;line-height: 52px;cursor: pointer;}
+#main .m_left .tab .prev{left:0}
+#main .m_left .tab .next{right:0}
+#main .m_left a{color:#cc1d00}
+#main .m_left .p1{margin :25px 0;}
+/*-----------服务热线小处理的公共样式-----------*/
+ .call a{background:url(../img/d.png) no-repeat ;color:#998675;padding-left:20px;}
+.call .a1{background:url(../img/d2.png) no-repeat;padding-left:16px;padding-bottom: 4px;}
+.call .a2{background:url(../img/d3.png) no-repeat;padding-left: 23px;margin-left:33px;padding-bottom: 4px;}
+/*--------完-------------*/
+#main .m_right{width:810px;height:509px;background: url(../img/d1.png) no-repeat right 163px;padding-top:6px;color:#666}
+#main .m_right h3{color:#444;font-weight: 500;font-size: 17px;padding-bottom:11px}
+#main .m_right h3 i{color:#ff0000}
+#main .m_right .p1{color:#999;line-height:21px;padding-bottom: 21px;}
+#main .m_right .p2{padding-bottom:18px}
+#main .m_right .p2 em{color:red;font-weight: 900;font-size:13px}
+#main .m_right .p2 b{color:#fff;background:#b3afe1;padding:4px;border-radius: 3px;margin:0 11px 0 26px}
+#main .m_right .p2 i{color:#938dcd}
+#main .m_right .p3{padding-bottom: 13px;}
+#main .m_right .p4{height:38px;width:210px}
+#main .m_right .p4 span{display: block;width:151px;height:20px;float: right;}
+#main .m_right .p4 a,#main .m_right .p4 b{padding:4px 12px;color:#fff;background:#cc1d00;margin-right:3px;}
+#main .m_right .p4 .log{color:#ff2400;font-weight: 900;}
+#main .m_right .p5{color:#999;padding-bottom:17px}
+#main .m_right .p5 i{color:#ff6d55;padding-bottom:15px}
+#main .m_right .p51{padding-bottom:15px}
+#main .m_right .p6{padding-bottom: 18px;height:30px;line-height:30px;}
+#main .m_right .p6 a{padding:10px 15px;margin-right:5px;color:#444;border:1px solid #ccc}
+#main .m_right .p7{width:150px;height:24px;line-height: 24px;}
+#main .m_right .p7 i{float: left;}
+#main .m_right .p7 input{width:40px;height:24px;border:1px solid #ddd;float: left;text-align: center;}
+#main .m_right .p7 a{display: block;width:20px;height:24px;border:1px solid #ddd;float: left;color:#444;text-align: center;line-height: 24px;}
+#main .m_right .join{background:#cc1d00;width:180px;height:50px;color:#fff;border:0;margin:20px 0;cursor: pointer;}
+/*------------------main2----------------------*/
+#main2{overflow: hidden;margin-top:20px}
+#main2 .m_left{width:220px;}
+#main2 .m_left .new{width:218px;border:1px solid #dbdbdb;border-top:1px solid #000;margin-bottom: 20px;}
+#main2 h5{height:31px;padding-left:15px;line-height: 31px;font-size:12px;font-weight: 500;border-bottom:1px solid #dbdbdb}
+#main2 .m_left .new ul li{height:229px;border-bottom:1px dashed #dbdbdb;padding-top:20px;text-align: center;}
+#main2 .m_left .new ul li img{width:150px;height:150px;margin:0 auto;}
+#main2 .m_left .new ul li .p2{margin:10px 0}
+#main2 .m_left .new ul li .p2 a{color:#454545;}
+#main2 .m_left .new ul li .p3 i{color:#787773;text-decoration: line-through;}
+#main2 .m_left .new ul li .p3 em{color:#bb0200;font-weight: 900;}
+#main2 .m_right{width:960px;}
+#main2 .m_right .bao{border-top:1px solid #000;border:1px solid #ccc}
+#main2 .m_right .bao .baocon{overflow: hidden;}
+#main2 .m_right .bao h5{color:#444;font-weight: 900;}
+#main2 .m_right .bao img{float: left;}
+#main2 .goodnav{border-top:1px solid #000;height:36px;border-bottom:1px solid #ddd;margin-top:20px}
+#main2 .goodnav ul li{float: left;}
+#main2 .goodnav ul li a{color:#666;font-weight: 900;display: block;height:35px;width:90px;line-height: 35px;text-align: center;font-size: 13px;}
+#main2 .goodnav ul li a:hover{color:#cc1d00}
+#main2 .goodnav ul .l1{color:#cc1d00}
+#main2 .com{border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;border-top:2px solid #cc1d00;margin-bottom:-1px;background:#fff;}
+#main2 .goodnav ul .l3{background:url(../img/iconkfg.gif) no-repeat  0 center;}
+#main2 .goodnav ul .l3 a{color:#cc1d00}
+#main2 .goodnav .right{height:36px;line-height:36px}
+#main2 .goodnav .right span{color:#cc1d00;font-weight: bolder;}
+#main2 .goodnav .right span em{font-weight: 900;}
+#main2 .goodnav .right a{float: right;color:#e6deff;width:129px;height:37px;background:#cc1d00;text-align: center;line-height: 37px;margin:-1px 0 0 15px;font-size:15px}
+#main2 .fixednav{width:1198px;height:37px;background: #f7f7f7;position: fixed;top:0;border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;border-top:1px solid #000;line-height: 37px;display: none;}
+#main2 .fixednav .goodnav{margin-top:0}
+#main2 .fixednav .call{width:218px}
+#main2 .fixednav ul{margin-right:430px}
+#main2 #xiangqing{width:790px;margin:20px auto;overflow: hidden;}
+#main2 #xiangqing img{float: left;}
+#main2 #pinglun{width:960px;border-top:1px solid #000}
+#main2 #pinglun .nav{height:31px;border-bottom:1px solid #DBDBDB;line-height: 31px;}
+#main2 #pinglun .nav a{width:129px;float: left;height:30px;line-height: 31px;text-align: center;color:#444;font-weight: 900;}
+#main2 #pinglun .nav .a1{color:#CC1D00}
+
+#main2 #pinglun .nav span{float: right;padding-top:8px}
+#main2 #pinglun .nav span i{background: url(../img/xie.png) no-repeat;display: block;width:18px;height: 19px;float: left;}
+#main2 #pinglun .nav span b{width:58px;height:19px;background:#cc1d00;color:#fff;text-align: center;line-height: 19px;float: left;margin-left: 1px;}
+#main2 #pinglun ul li{height:155px;border-bottom:1px double #DBDBDB}
+#main2 #pinglun ul img{width:130px;height:130px;margin-top:12px}
+#main2 #pinglun ul p{padding-left:10px;color:#444}
+#main2 #pinglun ul p a{/*border-bottom:1px solid #e5e5e5;*/display: block;height:38px;line-height: 38px;color:#444}
+#main2 #pinglun ul p b{display: block;height: 31px;}
+
+<li>
+							<a class="left" href="#"><img src="../img/1.jpg"/></a>
+							<p class="right">
+								<a href="#">自带漏斗 更方便】德国NUK奶粉定量储存盒（三层）颜色随机</a>								
+								<b>V1 普通会员 185***4744  2016-08-27 08:17 </b>
+								<i>好评</i>
+							</p>
+						</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册-麦乐购-全球精品母婴商城</title>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/check.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/com.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	</head>
+	<body>
+		<div id="userHeader">
+			<div class="left"><img src="../img/logo.gif"/></div>
+			<div class="right"><img src="../img/registerAuthenticPic.png"/></div>
+		</div>
+		<div id="userMain">
+			<div class="right">
+				<h3>新用户注册<span>已有麦乐购账号，<a href="login.html">直接登录</a></span></h3>
+				<div class="warn_parent">
+					<input class="warn_prev phone" type="text" placeholder="请输入手机号" /><br />
+					<p class="warn warn_phone">请输入手机号</p>
+				</div>
+				<div class="warn_parent">
+					<input class="warn_prev pass" type="text" placeholder="请输入密码" /><br />
+					<p class="warn warn_pass">请输入密码</p>
+				</div>
+				<div class="warn_parent">
+					<input class="warn_prev repass" type="text" placeholder="请再次输入密码" /><br />
+					<p class="warn warn_repass">请再次输入密码</p>
+				</div>
+				<div class="warn_parent">
+					<p class="yanP"><input class="yan message warn_prev yanzheng" type="text" placeholder="请输入验证码" /><b><i class="placeyanzhengma" style=""></i><a class="change" href="javascript:;">换一张</a></b></p>
+					<p class="warn warn_yanzheng">请输入验证码</p>
+				</div>
+				<div class="warn_parent">
+					<p class="msP"><input class="message left warn_prev duan" type="text" placeholder="短信校验码" /><input class="getM left" type="button" value="获取短信校验码" /></p>
+					<p class="warn warn_duan">您输入的短信校验码有误，请重新输入</p>
+				</div>
+				<input checked="checked" class="check" type="checkbox" value="" /><span class="agree">已阅读并同意<a href="#">《麦乐购注册协议及交易条款》</a></span><br />
+				<input class="btn" type="button" name="" id="" value="立即注册" /><br />
+				<p class="lastP">收不到短信？请使用<a href="#">语音验证码</a></p>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script type="text/javascript">
+var flag1 = false
+var flag2 = false
+var flag3 = false
+var flag4 = false
+var flag5 = false
+
+
+	$('#footer').load('comfoot1.html')
+
+	
+	
+	
+	
+	
+	
+	
+	
+	$('.phone').blur(function(){
+		var myStr = $(this).val()
+		if(myStr == ''){
+			$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('请输入手机号')	
+			flag1 = false
+		}else{
+			var re = /^[1-3]\d{10}$/;
+       	 	if (re.test($(this).val())){  
+       	 		var isexist = getCookie('user')
+				if(isexist == myStr){
+				$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('您输入的手机号码已被注册，请<a href="login.html" >直接登录<a>')
+				flag1 = false
+				}else{
+					$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#009900'}).html('可以使用')
+					flag1 = true
+				}		
+        	}else{        				$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('您输入的手机号码格式错误，请重新输入!')
+        		flag1 = false
+        	}
+		}
+		
+	})
+		$('.pass').blur(function(){
+			var myStr = $(this).val()
+			if(myStr == ''){
+			$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('请输入密码')
+			flag2 = false
+			}else{
+				var re = /^[a-zA-Z\d]{6,20}$/;
+       	 		if (re.test($(this).val())){         	 		
+					$(this).parents('.warn_parent').find('.warn').css({'display':'none'})
+					flag2 = true
+	        	}else{        					$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('密码长度必须为6-20个字符')
+	       			 flag2 = false
+	        	}
+			}
+		})
+	$('.repass').blur(function(){
+			var myStr = $(this).val()			
+			if(myStr == ''){
+			$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('请再次输入密码')	
+			flag3 = false
+			}else{
+				var str = $('.pass').val()
+       	 		if (str == myStr){         	 		
+				$(this).parents('.warn_parent').find('.warn').css({'display':'none'})
+				flag3 = true
+	        	}else{        					$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('两次输入的密码不一致，请重新输入')
+	        	flag3 = false
+	        	}
+			}
+		})
+	yanzheng()
+	function yanzheng(){
+		var str = yanzhengma()
+		$('.placeyanzhengma').html(str)
+		$('.change').click(function(){
+		var str = yanzhengma()
+		$('.placeyanzhengma').html(str)
+		})
+		$('.yanzheng').blur(function(){		
+			if(s == ''){
+				$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('请输入验证码')
+				flag4 = false
+			}else{
+				var s = $(this).val();
+				var ss = $('.placeyanzhengma').html()
+       	 		if (s == ss){         	 		
+					$(this).parents('.warn_parent').find('.warn').css({'display':'none'})
+					$('.placeyanzhengma').css({'background':'#ccc url(../img/dui.png) no-repeat 0 center'})
+					flag4 = true
+	        	}else{        					$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('验证码有误，请重新输入，请重新输入')
+	        					$('.placeyanzhengma').css({'background':'#ccc url(../img/cuo.png) no-repeat 0 center'})
+	        		flag4 = false
+	        	}
+			}
+		})	
+	}
+	$('.getM').click(function(){
+		var now = new Date();
+		var t = now.getMinutes()+1
+    	var time = now.setMinutes(t)
+    	var timer = setInterval(function(){
+    		var arr = daojishi(time)
+		$('.getM').val(arr[4]+''+arr[5]+'秒后重新获取')
+		if($('.getM').val()== '00秒后重新获取'){
+			clearInterval(timer)
+			$('.getM').val('获取短信校验码')
+		}
+    	},1000)		
+	})
+$('.duan').blur(function(){
+		var myStr = $(this).val()			
+		if(myStr == ''){
+		$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('请输入校验码')
+		flag5 = false
+		}else{
+			var str = $('.placeyanzhengma').html()
+       	 	if (str == myStr){         	 		
+				$(this).parents('.warn_parent').find('.warn').css({'display':'none'})	
+				flag5 = true
+	        }else{        				$(this).parents('.warn_parent').find('.warn').css({'display':'block','color':'#ff6b52'}).html('您输入的校验码不正确，请重新输入')
+	        	flag5 = false
+	        }
+		}
+})
+		$('.check').change(function(){
+			if($(this).prop('checked')){
+				$('.btn').css('background','#e83917')
+				$('.btn').attr('disabled',false)
+			}else{
+				$('.btn').css('background','#ccc')
+				$('.btn').attr('disabled',true)
+			}
+		})
+
+	$('.btn').click(function(){
+		var user = $('.phone').val();
+		var pass = $('.pass').val();
+		
+		if(flag1&&flag2&&flag3&&flag4&&flag5){
+			setCookie('user',user)
+			setCookie('pass',pass)
+			$('.btn').attr('disabled',false)
+			window.location.href = 'register_success.html'
+		}else if(!flag1){
+			$('.phone').blur()
+		}else if(!flag2){
+			$('.pass').blur()
+		}else if(!flag3){
+			$('.repass').blur()
+		}else if(!flag4){
+			yanzheng()
+		}else if(!flag5){
+			$('.duan').blur()
+		}
+			
+			
+		})
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</script>

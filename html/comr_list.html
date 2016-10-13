@@ -1,0 +1,113 @@
+<img class="bear" src="../img/bearcart.png"/>
+			<div class="r_list">	
+				<p class="p1"><a list="0" class="user on" href="#"></a><a list="1" class="cart" href="#"><i>购物车</i><b>0</b></a></p>
+				<ul>
+					<li class="l1"><a href="#">客服</a>
+						<p><span>400-666-6600</span>联系客服</p>
+					</li>
+					<li class="l2"><a href="#"></a>
+						<p class="pcom">我的收藏</p>
+					</li>
+					<li class="l3"><a href="#"></a>
+						<p class="pcom">浏览记录</p>
+					</li>
+					<li class="l4"><a href="#"></a>
+						<p><img src="../img/r2.jpg"/></p>
+					</li>
+					<li class="l5"><a href="#"></a>
+						<p class="pcom">反馈</p>
+					</li>
+					<li class="l6"><a href="javascript:;"></a></li>
+				</ul>
+			</div>
+			<div class="list_con">
+				<div class="userstatus xianshi">
+					<div class="login show">
+						<div class="warn_parent">
+					<input class="warn_prev phone" type="text" placeholder="手机号码/邮箱/用户名" /><br />
+					<p class="warn warn_phone">请输入手机号</p>
+				</div>
+				<div class="warn_parent">
+					<input class="warn_prev pass" type="text" placeholder="请输入密码" /><br />
+					<p class="warn warn_pass">密码</p>
+				</div>
+				<div class="warn_parent">
+					<p class="yanP"><input class="yan message warn_prev yanzheng" type="text" placeholder="验证码" /><b><i class="placeyanzhengma"></i><a class="change" href="javascript:;">换一张</a></b></p>
+					<p class="warn warn_yanzheng">请输入验证码</p>
+				</div>
+				
+				<a class="btn" href="javascript:;">登录</a><a class="register" href="register.html">免费注册</a>
+					</div>
+					<div class="unlogin">
+						<h4>欢迎回来</h4>
+						<a><img src="../img/mBear2.jpg"/></a>
+						<p class="p1">用户手机号</p>
+						<p class="p2">普通会员</p>
+						<input type="button" value="我的个人中心" />
+					</div>
+				</div>
+				<div class="isbuy">
+					<div class="buy">
+						<a class="kan" href="cart.html">全屏查看</a>
+						<p class="t">由麦乐购发货</p>
+						
+					</div>
+					<div class="nobuy"></div>
+				</div>
+			</div>
+			
+<script type="text/javascript">
+	var cookies = document.cookie;
+	var arrCook = cookies.split('; ');
+	var arr = []
+	for(var i = 0;i < arrCook.length;i++){
+		var cook = arrCook[i].split('=');
+		if(!isNaN(cook[0])){
+			arr.push(cook[1]);
+		}
+	}
+	$.ajax({
+		url:"../js/goodslist.json",
+		success:function(data){
+			var msg = data.data;
+			var str = ''
+			var str1 = ''
+			var count = 0
+			var price = 0
+			for(var i = 0;i < arr.length;i++){
+				for(var j = 0;j < msg.length;j++){
+					if(msg[j].id == arr[i]){
+					    num = parseInt(getCookie('dataId'+msg[j].id))//获取的商品数量
+					    price += num * msg[j].newprice
+					    count += num
+						str +=
+						'<ul>'+
+							'<li><a href="详情页"><span class="goodimg"><img src="'+msg[j].img+'"/></span><p><span class="goodname">'+msg[j].name+'</span><em><i>'+msg[j].newprice+'</i>*<b>'+num+'</b></em></p></a></li>'+
+						'</ul>'
+					str1 =	'<p class="sum"><span><em>共<i>'+count+'</i>件商品</em><b>¥'+price+'</b></span><a href="cart.html">去购物车结算</a></p>'
+					}
+				}
+			}
+			$('.list_con .buy').append(str+str1)
+		}
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
